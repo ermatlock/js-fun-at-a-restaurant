@@ -18,7 +18,6 @@ function addIngredients(item, ingredientList) {
     };
   };
   ingredientList.push(item);
-  return ingredientList;
 };
 
 function formatPrice(price) {
@@ -30,7 +29,7 @@ function decreasePrice(price) {
 };
 
 function createRecipe(title, ingredientList, menuType) {
-  recipe = {
+  var recipe = {
     title: title,
     ingredients: ingredientList,
     type: menuType,
