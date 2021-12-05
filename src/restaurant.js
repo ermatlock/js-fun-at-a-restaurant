@@ -11,7 +11,29 @@ function createRestaurant(restaurantName) {
 };
 
 function addMenuItem(restaurant, menuItem) {
-  if (menuItem.type === 'breakfast')
+  if (menuItem.type === 'breakfast') {
+    for (var i = 0; i < restaurant.menus.breakfast.length; i++){
+      if (restaurant.menus.breakfast[i] === menuItem) {
+        return;
+      }
+    }
+    restaurant.menus.breakfast.push(menuItem);
+  } else if (menuItem.type === 'lunch') {
+    for (var i = 0; i < restaurant.menus.lunch.length; i++){
+      if (restaurant.menus.lunch[i] === menuItem) {
+        return;
+      }
+    }
+    restaurant.menus.lunch.push(menuItem);
+  } else if (menuItem.type === 'dinner') {
+    for (var i = 0; i < restaurant.menus.dinner.length; i++){
+      if (restaurant.menus.dinner[i] === menuItem) {
+        return;
+      }
+    }
+    restaurant.menus.dinner.push(menuItem);
+  }
+// alternate refactored version
   // if (menuItem.type === 'breakfast' && !restaurant.menus.breakfast.includes(menuItem)) {
   //   restaurant.menus.breakfast.push(menuItem);
   // } else if (menuItem.type === 'lunch' && !restaurant.menus.lunch.includes(menuItem)) {
@@ -54,4 +76,4 @@ module.exports = {
   createRestaurant,
   addMenuItem,
   removeMenuItem
-}
+};

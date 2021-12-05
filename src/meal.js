@@ -7,7 +7,7 @@ function createMenuItem(menuItemName, price, type) {
     name: menuItemName,
     price: price,
     type: type,
-  };
+  }
   return menuItem;
 };
 
@@ -15,8 +15,8 @@ function addIngredients(item, ingredientList) {
   for (var i = 0; i < ingredientList.length; i ++) {
     if (item === ingredientList[i]) {
     return;
-    };
-  };
+    }
+  }
   ingredientList.push(item);
 };
 
@@ -33,7 +33,7 @@ function createRecipe(title, ingredientList, menuType) {
     title: title,
     ingredients: ingredientList,
     type: menuType,
-  };
+  }
   return recipe;
 };
 
