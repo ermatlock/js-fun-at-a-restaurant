@@ -36,31 +36,13 @@ function addMenuItem(restaurant, menuItem) {
 };
 
 function removeMenuItem(restaurant, menuItemName, type) {
-  if (type === 'breakfast') {
-    for (var i = 0; i < restaurant.menus.breakfast.length; i++) {
-      if (restaurant.menus.breakfast[i].name === menuItemName) {
-        restaurant.menus.breakfast.splice(i, 1);
-        return `No one is eating our ${menuItemName} - it has been removed from the ${type} menu!`
-      }
+  for (var i = 0; i < restaurant.menus[type].length; i++) {
+    if (restaurant.menus[type][i].name == menuItemName) {
+    restaurant.menus[type].splice(i, 1);
+    return `No one is eating our ${menuItemName} - it has been removed from the ${type} menu!`;
     }
-    return `Sorry, we don't sell ${menuItemName}, try adding a new recipe!`
-  } else if (type === 'lunch') {
-      for (var i = 0; i < restaurant.menus.lunch.length; i++) {
-        if (restaurant.menus.lunch[i].name === menuItemName) {
-          restaurant.menus.lunch.splice(i, 1);
-          return `No one is eating our ${menuItemName} - it has been removed from the ${type} menu!`
-        }
-      }
-      return `Sorry, we don't sell ${menuItemName}, try adding a new recipe!`
-  } else if (type === 'dinner') {
-      for (var i = 0; i < restaurant.menus.dinner.length; i++) {
-        if (restaurant.menus.dinner[i].name === menuItemName) {
-          restaurant.menus.dinner.splice(i, 1);
-          return `No one is eating our ${menuItemName} - it has been removed from the ${type} menu!`
-        }
-        return `Sorry, we don't sell ${menuItemName}, try adding a new recipe!`
-      }
   }
+  return `Sorry, we don't sell ${menuItemName}, try adding a new recipe!`;
 };
 
 
