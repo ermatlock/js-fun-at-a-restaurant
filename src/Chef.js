@@ -19,8 +19,7 @@ class Chef {
       }
     }
     return `Sorry, we aren't serving ${foodItem.name} today.`;
-  };
-
+  }
 };
 
 module.exports = Chef;
